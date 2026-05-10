@@ -121,7 +121,7 @@ useGSAP(()=>{
 
         {
             loading && (
-                <div className='flex-center absolute z-50 h-dvh overflow-hidden bg-violet-50 w-full'>
+                <div className='flex-center absolute z-50 h-dvh overflow-hidden bg-black w-full'>
                     <LoaderThree />
                 </div>
             )
