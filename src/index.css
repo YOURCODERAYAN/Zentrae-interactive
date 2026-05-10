@@ -61,16 +61,17 @@ body{
   font-family: 'General Sans' , sans-serif;
   width:100dvw;
   background-color: #dfdff0;
-  oveflow-x:hidden;
+  overflow-x:hidden;
 
 }
 
+.border-hsla {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
 
 
 @layer utilities {
-  .border-hsla {
-    @apply border border-white/20;
-  }
+  
 
   .nav-hover-btn {
     @apply relative ms-10 font-general text-xs uppercase text-blue-50 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
@@ -109,6 +110,7 @@ body{
     @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
   }
 
+
   .animated-title {
     @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
   }
@@ -123,9 +125,9 @@ body{
   }
 
   .bento-tilt_1 {
-    @apply relative border border-white/20 col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+     @apply relative   overflow-hidden rounded-md transition-transform duration-300 ease-out;
+     border:1px solid rgba(255 , 255 , 255 , 0.2)
   }
-
   .bento-tilt_2 {
     @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
@@ -135,18 +137,21 @@ body{
   }
 
   .story-img-container {
-    @apply relative md:h-dvh h-[90vh] w-full;
-    filter: url("#flt_tag");
+    @apply relative md:h-dvh h-[60vh] w-full overflow-hidden mt-14;
+  
   }
 
   .story-img-mask {
-    @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
-    clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
+    @apply absolute left-1/2 top-80 -translate-x-1/2 -translate-y-1/2 overflow-hidden  size-full;
+    width:60%;
+    height:60%;
+    border-radius:20px;
+    overflow:hidden;
+    transform:  rotate(5deg);
   }
 
   .story-img-content {
-    @apply absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
-    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
+    @apply size-full
   }
 
   .gallery-img-container {
